@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Login</title>
+  <base href="/login">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="favicon.ico">
+  <link type="text/css" rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" />
+  <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <style>
+  	*{ 
+    margin: 0px;
+}
+
+#sidebar {
+    /*Strictly Necessary */
+    position:fixed; 
+    height: 100%;
+    width:30%;
+    margin: 0px;  
+
+    /*Aesthetics*/
+    /*background: lightblue;*/ 
+    background: #af002d; 
+    /*border-radius: 7px;*/  
+}
+
+.text-container{
+    margin: auto;
+    background: #af002d;
+    text-align: center;
+    color: white;
+    margin-top: 50px;
+}
+
+
+#rightSideWrapper {
+    /*Strictly Necessary */
+    width:70%; 
+    float: right;
+
+    /*Aesthetics*/
+    background: white;	
+}
+
+header {
+    /*Strictly Necessary */
+    position: fixed;
+    width: 70%;	
+    height: 50px; /*Adjust the hight to your purposes*/
+
+    /*Aesthetics*/
+    background: lightSalmon;
+    /*border-radius: 7px;*/
+}
+
+.ContentBox{
+    margin-top: 100px; /*The height of the   header*/
+    display:flex;
+    flex-flow: row wrap;
+} 
+
+main, section, footer {
+    /*Aesthetics*/
+    background: white; 
+    /*border-radius: 7px;*/ 
+    /*margin: 5px;*/ 
+    padding: 20px;
+}
+
+main {
+    /*Strictly Necessary */
+    height: 400px;
+    order: 1;
+    flex: 0 1 100%; 
+
+}
+
+main{
+    margin-top: -40px;
+}
+
+section {
+    /*Strictly Necessary */
+    height: 400px;
+    order: 2;
+    flex: 0 1 100%;
+
+}
+
+footer {
+    /*Strictly Necessary */
+    height: 100px;
+    order: 3;
+    flex: 0 1 100%;
+
+}
+
+/*RIGHT HEADER*/
+.sign-up-container-right-header{
+    height: 50px;
+    background: #fff;
+    background-image: linear-gradient(130deg,#ff7a18,#af002d 51.07%,#319197 76.05%);
+    box-shadow: 1px 1px 0 1px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+}
+.header-left{
+    width: 35%;
+    background: white;
+}
+.header-center{
+    width: 25%;
+    background: white;
+}
+.header-right{
+    width: 50%;
+    background: white;
+    display: flex;
+    text-align: center;
+}
+
+.header-right-left{
+    width: 40%;
+    background: white;
+    justify-content: center;
+}
+
+.header-right-right{
+    width: 60%;
+    background: white;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    margin-top: 18px;
+    font-family: arial;
+    font-size: 13.3333px;
+}
+
+.header-right-right>a{
+    text-decoration: none;
+    color: black;
+    margin-left: 5px;
+}
+
+.header-right-right>a:hover{
+    color: #ff7a18;
+    cursor: pointer;
+}
+
+.support-button{
+    background: none;
+    border: none;
+    outline: none;
+    margin-top: 18px;
+    margin-right: 24px;
+    /*cursor: pointer;*/
+    /*border-bottom: 1px solid orangered;*/
+}
+
+.support-button:hover{
+    color: #ff7a18;
+    cursor: pointer;
+}
+
+/*SIGNUP CONTAINER*/
+
+.sign-in-container{
+    width: fit-content;
+    height: fit-content;
+    /*background: #f0c14b;*/
+    background: #fff;
+    box-shadow: 2px 8px 16px 2px rgba(0,0,0,0.2);
+    margin: 20px;
+    padding: 20px;
+}
+
+.form-control{
+    width: 95%;
+    padding: 5px;
+    /*border-radius: 15px;*/
+    outline: none;
+    margin-bottom: 10px;
+}
+
+.sign-in-button{
+    width: 95%;
+    padding: 5px;
+    background-image: linear-gradient(130deg,#ff7a18,#af002d 51.07%,#af002d 76.05%);
+    outline: none;
+    box-shadow: 2px 1px 1px 1px rgba(0,0,0,0.2);
+    border: none;
+}
+
+.sign-in-button>a{
+    color: white;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.form-control-select{
+    width: 95%;
+    padding: 5px;
+    /*border-radius: 15px;*/
+    outline: none;
+    margin-bottom: 10px;
+}
+
+h1, h5{
+    font-family: Arial;
+    margin-bottom: 5px;
+}
+
+h1{
+	font-size: 30px;
+}
+
+h5{
+	font-size: 15px;
+}
+
+/*LOGO DESIGN*/
+.logo-container {
+    width: 300px;
+    height: fit-content;
+    border-radius: 5px;
+    padding: 20px;
+    margin: auto;
+    margin-top: 120px;
+}
+
+.logo-m-first{
+    color: white;
+    background: black;
+    background-image: linear-gradient(130deg,#ff7a18,#af002d 51.07%,#319197 76.05%);
+    box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.1);
+    font-size: 45px;
+    font-weight: bold;
+    transform: rotate(20deg);
+    width: fit-content;
+    margin-left: 15px;
+    padding: 4px;
+
+}
+
+.logo-c-first{
+    color: white;
+    background: black;
+    background-image: linear-gradient(130deg,#ff7a18,#af002d 51.07%,#319197 76.05%);
+    box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.1);
+    font-size: 45px;
+    font-weight: bold;
+    transform: rotate(-20deg);
+    width: fit-content;
+    padding: 4px;
+
+}
+
+.logo-r-first{
+    color: white;
+    background: black;
+    background-image: linear-gradient(130deg,#ff7a18,#af002d 51.07%,#319197 76.05%);
+    box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.1);
+    font-size: 45px;
+    font-weight: bold;
+    transform: rotate(20deg);
+    width: fit-content;
+    padding: 4px;
+
+}
+
+.logo-m-second{
+    color: white;
+    background: black;
+    background-image: linear-gradient(130deg,#ff7a18,#af002d 51.07%,#319197 76.05%);
+    box-shadow: 1px 1px 2px 1px rgba(0, 0, 0, 0.1);
+    font-size: 45px;
+    font-weight: bold;
+    transform: rotate(-20deg);
+    width: fit-content;
+    padding: 4px;
+}
+
+.logo-div{
+    display: flex;
+    justify-content: center;
+}
+
+  	
+  </style>
+</head>
+    <body>
+
+        <div id="sidebar">
+            <div class="logo-container">
+                <div class="logo-div">
+                    <div class="logo-m-first">Orange</div>
+                    <div class="logo-c-first">E</div>
+                    <div class="logo-r-first">Pay</div>
+                    <!--<div class="logo-m-second">M</div>-->
+                </div>
+            </div>
+            <div class="text-container">
+                <p>"The ease and simplicity of the program <br>
+                    and the way that the <br>
+                    MCRM Team have continued to <br>
+                    develop solutions around and <br>
+                    integrated with the CRM. We <br>
+                    utilize projects for clients and <br>
+                    the MCRM meeting for training <br>
+                    and presentations. From the <br>
+                    mobile device the automated <br>
+                    calling and tracking is <br>
+                    Fabulous."</p>
+            </div>
+        </div>
+        <div id="rightSideWrapper">
+            <header> 
+                <div class="sign-up-container-right-header">
+                    <div class="header-left"></div>
+                    <div class="header-center"></div>
+                    <div class="header-right">
+                        <div class="header-right-left">
+                            <div class="dropdown">
+                                <!--<button onclick="myFunction()" class="support-button"><a href="verification-page"></a>Customer Support</button>-->
+<!--                                 <button class="support-button"><a href="feedverification">Customer Support</a></button> -->
+                                <!--                                <div id="myDropdown" class="dropdown-content">
+                                                                    <a href="feedverification">Feedback</a>
+                                                                    <a href="remverification">Remonstrance</a>
+                                                                    <a href="rating">Rate us</a>
+                                                                </div>-->
+                            </div>
+                        </div>
+                        <div class="header-right-right">
+<!--                             <p>Have An MCRM Account?</p> -->
+                            <a href="/">About</a>
+                        </div>
+
+                    </div>
+                </div>
+            </header>
+
+            <div class="ContentBox"><!--. poner en minusculas.-->
+                <main> 
+                    <div class="sign-in-container">
+                        <h1>Get started with OrangeE-Payment</h1>
+					<form>
+						<h5>Username</h5>
+						<input type="text" name="name" value="" class="form-control"
+							id="username">
+						<h5>Password</h5>
+						<input type="password" name="password" value=""
+							class="form-control" id="password">
+						<button type="submit" class="sign-in-button">
+							<a href="/">GET STARTED</a>
+						</button>
+					</form>
+				</div> 
+
+                </main>
+
+<!--                 <section> -->
+<!--                     Section Content -->
+<!--                 </section> -->
+
+<!--                 <footer>  -->
+<!--                     Footer  -->
+<!--                 </footer> -->
+
+            </div>
+
+        </div>
+
+    </body>
+</html>

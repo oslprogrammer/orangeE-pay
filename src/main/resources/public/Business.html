@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>UploadServiceApp</title>
+<base href="/">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link type="text/css" rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" />
+<link
+	href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap"
+	rel="stylesheet">
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+	rel="stylesheet">
+</head>
+
+<body>
+	<p>Home of Business</p>
+	<form action="/businessSave" method="post">
+	<h5>Name</h5>
+	<input type="text" name="zorg" value="" class="form-control" id="zorg">
+	<h5>City</h5>
+	<input type="text" name="xcity" value="" class="form-control"
+		id="xcity"> 
+	<input type="submit" class="" value="Save" />
+	</form>
+
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+	<script>
+		var business = $("#xcity").val();
+		console.log(business);
+	</script>
+</body>
+</html>
